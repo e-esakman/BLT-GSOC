@@ -48,28 +48,44 @@
 
 <body class="bg-white dark:bg-gray-900">
     <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md">
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <h1 class="text-xl font-bold text-gray-900 dark:text-white">OWASP BLT GSoC</h1>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="./" class="text-gray-700 dark:text-gray-300 hover:text-red-500">Home</a>
-                    <a href="pr-report.html" class="text-gray-700 dark:text-gray-300 hover:text-red-500">PR
-                        Analytics</a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="./" class="text-red-500 font-bold px-1 pt-1 border-b-2 border-red-500">Home</a>
+                    <a href="pr-report.html" class="text-gray-700 dark:text-gray-300 hover:text-red-500 px-1 pt-1 border-b-2 border-transparent">PR Analytics</a>
                     <a href="https://github.com/OWASP-BLT/BLT-GSOC"
                         class="text-gray-700 dark:text-gray-300 hover:text-red-500">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <!-- Theme Toggle Button -->
                     <button
-                        class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                        aria-label="Toggle Theme">
+                        class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                         <i class="fas fa-moon text-gray-600 dark:text-gray-400"></i>
                     </button>
                 </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 dark:text-gray-300 hover:text-red-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+        <!-- Mobile toggle button -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 px-4 py-4 space-y-3">
+            <a href="./" class="block text-red-500 font-bold">Home</a>
+            <a href="pr-report.html" class="block text-gray-700 dark:text-gray-300">PR Analytics</a>
+            <a href="https://github.com/OWASP-BLT/BLT-GSOC" class="block text-gray-700 dark:text-gray-300">GitHub</a>
+            <!-- Theme toggle button -->
+            <button
+                class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                aria-label="Toggle Theme">
+                <i class="fas fa-moon text-gray-600 dark:text-gray-400"></i>
+            </button>
         </div>
     </nav>
 
@@ -80,7 +96,7 @@
     <div class="mt-10 bg-white dark:bg-gray-900 py-16 p-10">
         <div
             class="bg-zinc-100 dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300 p-8">
-            <div class="w-[85%] mx-auto">
+            <div class="w-full max-w-7xl px-4 md:px-10 mx-auto">
                 <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="md:w-1/3 flex justify-center">
                         <div class="relative">
@@ -124,7 +140,7 @@
     </div>
     <!-- Main Content -->
     <div class="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
-        <div class="w-[85%] mx-auto">
+        <div class="w-full max-w-7xl px-4 md:px-10 mx-auto">
             <!-- Stats Section -->
             <div class="mb-16">
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -512,10 +528,9 @@
             <!-- Success Stories -->
             <div
                 class="bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-all duration-300 p-8 border border-gray-100 dark:border-gray-800 mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Success
-                    Stories</h2>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Success Stories</h2>
                 <div class="w-20 h-1 bg-[#e74c3c] mx-auto mb-8 rounded-full"></div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Shirish Jain -->
                     <div
                         class="bg-white dark:bg-gray-900 rounded-xl shadow-lg transition-all duration-300 p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
@@ -524,13 +539,13 @@
                                 <i class="fas fa-code text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Shirish Jain</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Shirish Jain</h3>
                                 <p class="text-gray-600 dark:text-gray-400">GSoC 2023</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">Successfully
                             implemented the Sizzle Time Tracking feature during GSoC 2023.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-col sm:flex-row gap-3">
                             <a href="https://medium.com/@shirishjain.2001/gsoc-2023-final-report-owasp-bug-logging-tool-f70d6368f9f5"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -551,13 +566,13 @@
                                 <i class="fas fa-comments text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Aryan Ranjan</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Aryan Ranjan</h3>
                                 <p class="text-gray-600 dark:text-gray-400">GSoC 2023</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">Developed the
                             Discussion Room feature during GSoC 2023.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-col sm:flex-row gap-3">
                             <a href="https://medium.com/@justary27/my-gsoc22-voyage-beginning-4296df5af625"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -578,13 +593,13 @@
                                 <i class="fas fa-bug text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Swapnil Shinde</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Swapnil Shinde</h3>
                                 <p class="text-gray-600 dark:text-gray-400">GSoC 2022</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">Contributed to OWASP
                             BLT development.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-col sm:flex-row gap-3">
                             <a href="https://gist.github.com/AtmegaBuzz/512a85827b5cc993e35c274dcbada669"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-file-alt"></i>
@@ -605,13 +620,13 @@
                                 <i class="fas fa-graduation-cap text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Bishal Das</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Bishal Das</h3>
                                 <p class="text-gray-600 dark:text-gray-400">GSoC 2024</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">GSoC Learning journey
                             with OWASP BLT.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                             <a href="https://bishaldas.hashnode.dev/gsoc-2024-a-summer-of-learning-coding-and-growth"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -632,13 +647,14 @@
                                 <i class="fas fa-flask text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Shubham Palriwala</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Shubham Palriwala
+                                </h3>
                                 <p class="text-gray-600 dark:text-gray-400">OWASP Juice Shop</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">OWASP Juice Shop
                             Journey</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                             <a href="https://medium.com/@shubhampalriwala/google-summer-of-code-journey-with-owasp-juice-shop-c1ca15c8e170"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -654,13 +670,13 @@
                                 <i class="fas fa-network-wired text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Akshay Behl</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Akshay Behl</h3>
                                 <p class="text-gray-600 dark:text-gray-400">OWASP Nettacker</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">OWASP Nettacker
                             Experience</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                             <a href="https://medium.com/@akshaybehl231/diving-into-open-source-owasp-nettacker-gsoc24-e73114f37a11"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -676,13 +692,13 @@
                                 <i class="fas fa-shield-alt text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Chakshu Gupta</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Chakshu Gupta</h3>
                                 <p class="text-gray-600 dark:text-gray-400">OWASP Honeypot Project</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">OWASP Honeypot Project
                             Journey</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                             <a href="https://medium.com/@ChGDream/my-google-summer-of-code-2020-journey-with-owasp-b772c3e67c3f"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -698,13 +714,13 @@
                                 <i class="fas fa-cube text-[#e74c3c] text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-semibold">Rishabh Keshan</h3>
+                                <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Rishabh Keshan</h3>
                                 <p class="text-gray-600 dark:text-gray-400">Web3 Juice Shop</p>
                             </div>
                         </div>
                         <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">Hacking the Blockchain:
                             Building Web3 Challenges for OWASP Juice Shop</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                             <a href="https://medium.com/@rishabhkeshan/google-summer-of-code-2023-building-web3-challenges-for-owasp-juice-shop-c7f7d4b4e3a9"
                                 class="flex-1 hover:text-white bg-[#e74c3c] text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-center flex items-center justify-center gap-2">
                                 <i class="fas fa-book-open"></i>
@@ -734,7 +750,8 @@
                     <!-- Md Kaif Ansari -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -743,7 +760,7 @@
                                     Ansari</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/mdkaifansari04" target="_blank"
                                         rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
@@ -823,7 +840,8 @@
                     <!-- Preetham -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -832,7 +850,7 @@
                                 </h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/Pritz395" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -913,7 +931,8 @@
                     <!-- Siddharth Bansal -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -922,7 +941,7 @@
                                     Bansal</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/sidd190" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -996,24 +1015,24 @@
                     <!-- Sakshee Suman -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
+                            
                             <div class="flex-1">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Sakshee
-                                    Suman</h3>
-                                <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
-                                    Contributor</p>
-                                <div class="flex gap-4">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Sakshee Suman</h3>
+                                <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">2026 Contributor</p>
+                                
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/e-esakman" target="_blank" rel="noopener noreferrer"
-                                        class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
+                                        class="inline-flex items-center justify-center px-6 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
                                         GitHub Profile
                                     </a>
-                                    <a href="https://e-esakman.github.io/MY-GSOC-TOOL/" target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="inline-flex items-center px-4 py-2 border-2 border-[#e74c3c] text-[#e74c3c] rounded-lg hover:bg-[#e74c3c] hover:text-white transition-colors">
+                                    <a href="https://e-esakman.github.io/MY-GSOC-TOOL/" target="_blank" rel="noopener noreferrer"
+                                        class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#e74c3c] text-[#e74c3c] rounded-lg hover:bg-[#e74c3c] hover:text-white transition-colors">
                                         <i class="fas fa-tools mr-2"></i>
                                         GSoC-Tool
                                     </a>
@@ -1057,7 +1076,8 @@
                     <!-- Arnav Kirti -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1066,7 +1086,7 @@
                                     Kirti</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/arnavkirti" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1085,7 +1105,8 @@
                     <!-- Savio D'souza -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1094,7 +1115,7 @@
                                     D'souza</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/S3DFX-CYBER" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1145,7 +1166,8 @@
                     <!-- Jayant Malvi -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1154,7 +1176,7 @@
                                     Malvi</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/Jayant2908" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1198,7 +1220,8 @@
                     <!-- Manahil Afzal -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1207,7 +1230,7 @@
                                     Afzal</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/Manahil-Afzal" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1226,7 +1249,8 @@
                     <!-- Kunal Gupta -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1235,7 +1259,7 @@
                                     Gupta</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/Kunal241207" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1253,7 +1277,8 @@
                     </div>
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 p-8">
-                        <div class="flex items-center gap-6 mb-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
                             <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
                                 <i class="fab fa-github text-[#e74c3c] text-3xl"></i>
                             </div>
@@ -1262,7 +1287,7 @@
                                     Roy</h3>
                                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-2">2026
                                     Contributor</p>
-                                <div class="flex gap-4">
+                                <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                                     <a href="https://github.com/Nachiket-Roy" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center px-4 py-2 bg-[#e74c3c] text-white rounded-lg hover:bg-red-700 transition-colors">
                                         <i class="fab fa-github mr-2"></i>
@@ -1293,7 +1318,7 @@
                 <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-2">Past
                     GSoC Mentors</h2>
                 <div class="w-20 h-1 bg-[#e74c3c] mx-auto mb-8 rounded-full"></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                         <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
                             <i aria-hidden="true" class="fas fa-calendar-alt text-[#e74c3c] mr-2"></i>2025
@@ -1414,6 +1439,15 @@
         </div>
     </div>
     <script src="js/theme.js"></script>
+    <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>

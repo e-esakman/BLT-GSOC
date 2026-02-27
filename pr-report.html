@@ -42,27 +42,44 @@
 
 <body class="bg-white dark:bg-gray-900">
     <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md">
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <h1 class="text-xl font-bold text-gray-900 dark:text-white">OWASP BLT GSoC</h1>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="./" class="text-gray-700 dark:text-gray-300 hover:text-red-500">Home</a>
-                    <a href="pr-report.html" class="text-red-500 font-medium">PR Analytics</a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="./" class="text-gray-700 dark:text-gray-300 hover:text-red-500 px-1 pt-1 border-b-2 border-transparent">Home</a>
+                    <a href="pr-report.html" class="text-red-500 font-bold px-1 pt-1 border-b-2 border-red-500">PR Analytics</a>
                     <a href="https://github.com/OWASP-BLT/BLT-GSOC"
                         class="text-gray-700 dark:text-gray-300 hover:text-red-500">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <!-- Theme Toggle Button -->
+                    <!-- Theme toggle button -->
                     <button
-                        class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                        aria-label="Toggle Theme">
+                        class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                         <i class="fas fa-moon text-gray-600 dark:text-gray-400"></i>
                     </button>
                 </div>
+                 <!-- Mobile toggle button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 dark:text-gray-300 hover:text-red-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 px-4 py-4 space-y-3">
+            <a href="./" class="block text-gray-700 dark:text-gray-300">Home</a>
+            <a href="pr-report.html" class="block text-red-500 font-bold">PR Analytics</a>
+            <a href="https://github.com/OWASP-BLT/BLT-GSOC" class="block text-gray-700 dark:text-gray-300">GitHub</a>
+            <button
+                class="theme-toggle-btn p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                aria-label="Toggle Theme">
+                <i class="fas fa-moon text-gray-600 dark:text-gray-400"></i>
+            </button>
         </div>
     </nav>
 
@@ -255,6 +272,15 @@
         </div>
     </footer>
     <script src="js/theme.js"></script>
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
